@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :restaurants, dependent: :destroy
   has_many :reviews, dependent: :destroy
+
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end
